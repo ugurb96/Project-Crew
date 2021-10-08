@@ -1,0 +1,12 @@
+@use '~@angular/material' as mat;
+@include mat.core();
+$Project-Crew-primary: mat.define-palette(mat.$pink-palette);
+$Project-Crew-accent: mat.define-palette(mat.$blue-gray-palette);
+$Project-Crew-theme: mat.define-dark-theme((
+  color: (
+    primary: $Project-Crew-primary,
+    accent: $Project-Crew-accent,
+  )
+));
+@include mat.all-component-themes($Project-Crew-theme);
+
