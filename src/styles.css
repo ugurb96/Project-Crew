@@ -3,3 +3,14 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.ag-header-cell-label .ag-header-cell-text {
+    font-size: 20px;
+    color: chocolate;
+    font-weight: bold;
+}
+
+.ag-theme-balham {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
