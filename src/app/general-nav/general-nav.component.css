@@ -21,11 +21,15 @@
   flex: 1 1 auto !important;
 }
 
-.mat-toolbar a {
-  display: inline-block;
+.mat-toolbar button {
+  padding: 0;
+  border: none;
+  background: none;
   margin: 0 10px;
   color: white;
   text-decoration: none;
+  font-size: inherit;
+  font-weight: bold;
 }
 
 .hidden {

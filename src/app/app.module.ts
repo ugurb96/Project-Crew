@@ -11,11 +11,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { AgGridModule } from 'ag-grid-angular';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MyPopupComponent } from './my-popup/my-popup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GeneralNavComponent
+    GeneralNavComponent,
+    MyPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -26,9 +29,11 @@ import { AgGridModule } from 'ag-grid-angular';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([]),
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [MyPopupComponent]
 })
 export class AppModule { }

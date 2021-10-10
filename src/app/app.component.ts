@@ -1,4 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MyPopupComponent } from './my-popup/my-popup.component';
 
 @Component({
   selector: 'app-root',
@@ -7,42 +9,45 @@ import { Component, ViewChild } from '@angular/core';
 })
 export class AppComponent {
   title = "Project-Crew";
-  // @ViewChild('agGrid', { static: false }) agGrid?: AgGridAngular;
   columnDefs = [
-    {headerName: 'Color', field: 'color', sortable: true, filter: true, width: 660 },
-    {headerName: 'Code', field: 'code', sortable: true, filter: true, width: 660 },
+    {headerName: 'First Name', field: 'name', sortable: true, filter: true, width: 330 },
+    {headerName: 'Last Name', field: 'surname', sortable: true, filter: true, width: 330 },
+    {headerName: 'Nationality', field: 'nation', sortable: true, filter: true, width: 330 },
+    {headerName: 'Title', field: 'newTitle', sortable: true, filter: true, width: 330 },
   ];
-
   rowData = [
     {
-      color: "red",
-      code: "#f00"
+      name: "John",
+      surname: "Doe",
+      nation: "Canadian",
+      newTitle: "Captain"
     },
     {
-      color: "green",
-      code: "#0f0"
+      name: "Mary",
+      surname: "Elizabeth",
+      nation: "Australian",
+      newTitle: "Engineer"
     },
     {
-      color: "blue",
-      code: "#00f"
+      name: "Liz",
+      surname: "Smith",
+      nation: "Mexican",
+      newTitle: "Cooker"
     },
     {
-      color: "cyan",
-      code: "#0ff"
+      name: "Jim",
+      surname: "Brown",
+      nation: "British",
+      newTitle: "Mech"
     },
     {
-      color: "magenta",
-      code: "#f0f"
+      name: "Charles",
+      surname: "Kennedy",
+      nation: "Colombian",
+      newTitle: "Engineer"
     },
-    {
-      color: "yellow",
-      code: "#ff0"
-    },
-    {
-      color: "black",
-      code: "#000"
-    }
   ]
+  
   // getSelectedItem(){
   //   const selectedNodes = this.agGrid?.api.getSelectedNodes();
   //   const selectedData = selectedNodes?.map(node => node.data);
