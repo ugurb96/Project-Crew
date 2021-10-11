@@ -9,9 +9,9 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Home Page</a>
+      <a mat-list-item href="http://localhost:4200">Home Page</a>
       <a mat-list-item href="#">Card Page</a>
-      <a mat-list-item href="#">Certificates</a>
+      <button mat-list-item (click)="openDialog()">Certificates</button>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -24,9 +24,9 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Project Crew</span>
+      <span>PROJECT CREW</span>
       <span class="inBetween"></span>
-      <button>Home Page</button>
+      <a href="http://localhost:4200">Home Page</a>
       <button>Card Page</button>
       <button (click)="openDialog()">Certificates</button>
     </mat-toolbar>

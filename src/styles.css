@@ -14,3 +14,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-weight: bold;
     text-transform: uppercase;
 }
+
+.mat-dialog-container {
+    width: 500px !important;
+    height: 500px !important;
+    padding: 1% !important;
+}

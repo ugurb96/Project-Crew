@@ -1,9 +1,13 @@
-/* .sidenav-container {
-  height: 100%;
-} */
-
 .sidenav {
   width: 200px;
+}
+
+.sidenav .mat-nav-list button {
+  padding: 0;
+  border: none;
+  background: none;
+  color: white;
+  text-decoration: none;
 }
 
 .sidenav .mat-toolbar {
@@ -29,7 +33,22 @@
   color: white;
   text-decoration: none;
   font-size: inherit;
-  font-weight: bold;
+  font-family: inherit;
+  font-weight: inherit;
+  text-transform: uppercase;
+}
+
+.mat-toolbar a {
+  padding: 0;
+  border: none;
+  background: none;
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  text-transform: uppercase;
 }
 
 .hidden {
