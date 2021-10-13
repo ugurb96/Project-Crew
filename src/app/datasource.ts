@@ -1,5 +1,6 @@
 export let sampleData: Object[] = [
     {
+        id: 1,
         name: "John",
         surname: "Doe",
         nation: "Canadian",
@@ -8,6 +9,7 @@ export let sampleData: Object[] = [
         cDate: new Date("08/21/2001")
     },
     {
+        id: 2,
         name: "Mary",
         surname: "Elizabeth",
         nation: "Australian",
@@ -16,6 +18,7 @@ export let sampleData: Object[] = [
         cDate: new Date("04/14/1993")
     },
     {
+        id: 3,
         name: "Liz",
         surname: "Smith",
         nation: "Mexican",
@@ -24,6 +27,7 @@ export let sampleData: Object[] = [
         cDate: new Date("02/29/1999")
     },
     {
+        id: 4,
         name: "Jim",
         surname: "Brown",
         nation: "British",
@@ -32,6 +36,7 @@ export let sampleData: Object[] = [
         cDate: new Date("03/11/2004")
     },
     {
+        id: 5,
         name: "Charles",
         surname: "Kennedy",
         nation: "Colombian",

@@ -4,6 +4,9 @@
 	class="ag-theme-balham"
 	[rowData]="rowData" 
 	[columnDefs]="columnDefs"
-	[enableCellTextSelection]=true
+	rowSelection="single"
+	(rowClicked)='onRowClicked($event)'
 	>
 </ag-grid-angular>
+
+<!-- rowMultiSelectWithClick=true --> <!-- This is for multi selection by simply clicking-->
