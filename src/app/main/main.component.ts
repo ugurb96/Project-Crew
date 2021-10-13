@@ -17,7 +17,7 @@ export class MainComponent implements OnInit {
     surname: string;
   }
   columnDefs = [
-    {headerName: 'ID', field: 'id', sortable: true, filter: true, checkboxSelection: true, width: 440, },
+    {headerName: 'ID', field: 'id', sortable: true, filter: true, width: 440, },
     {headerName: 'First Name', field: 'name', sortable: true, filter: true, width: 440, },
     {headerName: 'Last Name', field: 'surname', sortable: true, filter: true, width: 440 },
   ];
@@ -25,7 +25,7 @@ export class MainComponent implements OnInit {
     this.rowData = sampleData;
   }
 
-  onRowClicked(event: any) {  
+  onCellClicked(event: any) {  
     this.selectedData = event.data;
     console.log(this.selectedData?.id);
   }
