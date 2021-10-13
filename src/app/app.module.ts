@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule, Routes } from '@angular/router'
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GeneralNavComponent } from './general-nav/general-nav.component';
@@ -13,12 +13,22 @@ import { MatListModule } from '@angular/material/list';
 import { AgGridModule } from 'ag-grid-angular';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MyPopupComponent } from './my-popup/my-popup.component';
+import { DetailsComponent } from './details/details.component';
+import { AppRoutingModule } from './app-routing.module';
+import { MainComponent } from './main/main.component';
+
+const routes: Routes = [
+  { path: 'main', component: MainComponent },
+  { path: 'details', component: DetailsComponent },
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     GeneralNavComponent,
-    MyPopupComponent
+    MyPopupComponent,
+    DetailsComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -30,10 +40,12 @@ import { MyPopupComponent } from './my-popup/my-popup.component';
     MatIconModule,
     MatListModule,
     AgGridModule.withComponents([]),
-    MatDialogModule
+    MatDialogModule,
+    RouterModule.forRoot(routes),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [MyPopupComponent]
+  entryComponents: [MyPopupComponent],
 })
 export class AppModule { }
