@@ -1,4 +1,4 @@
-export let sampleData: Object[] = [
+export let sampleData = [
     {
         id: 1,
         name: "John",

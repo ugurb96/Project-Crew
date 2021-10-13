@@ -1,5 +1,5 @@
-import { identifierModuleUrl } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { sampleData } from '../datasource';
 
 @Component({
@@ -9,7 +9,7 @@ import { sampleData } from '../datasource';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
   rowData?: Object[];
   selectedData?: {
     id: number;
@@ -25,8 +25,8 @@ export class MainComponent implements OnInit {
     this.rowData = sampleData;
   }
 
-  onCellClicked(event: any) {  
+  onCellClicked(event: any): void {  
     this.selectedData = event.data;
-    console.log(this.selectedData?.id);
+    this.router.navigateByUrl('/details/' + this.selectedData?.id);
   }
 }

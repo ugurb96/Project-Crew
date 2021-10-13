@@ -1,4 +1,5 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { sampleData } from '../datasource';
 
 @Component({
@@ -7,15 +8,23 @@ import { sampleData } from '../datasource';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  rowData?: Object[];
+  rowData?: any;
+  selectedObject?: Object;
+  id?: number;
   columnDefs = [
-    {headerName: 'First Name', field: 'name', sortable: true, filter: true, width: 330 },
-    {headerName: 'Last Name', field: 'surname', sortable: true, filter: true, width: 330 },
-    {headerName: 'Nationality', field: 'nation', sortable: true, filter: true, width: 330 },
-    {headerName: 'Title', field: 'newTitle', sortable: true, filter: true, width: 330 },
+    {headerName: 'First Name', field: 'name', sortable: true, filter: true, width: 220 },
+    {headerName: 'Last Name', field: 'surname', sortable: true, filter: true, width: 220 },
+    {headerName: 'Nationality', field: 'nation', sortable: true, filter: true, width: 220 },
+    {headerName: 'Title', field: 'newTitle', sortable: true, filter: true, width: 220 },
+    {headerName: 'Certificate Name', field: 'cName', sortable: true, filter: true, width: 220 },
+    {headerName: 'Certificate Date', field: 'cDate', sortable: true, filter: true, width: 220 },
   ];
-  
-  ngOnInit(): void {   
-    this.rowData = sampleData;
+  constructor(private activatedRoute: ActivatedRoute){}
+  ngOnInit(): void {
+    // this part is to get id from url
+    this.activatedRoute.params.subscribe(p => {
+      this.id = p['id'];
+      this.rowData = sampleData.filter(x => x.id == this.id);     
+    })
   }
 }

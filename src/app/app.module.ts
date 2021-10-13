@@ -20,6 +20,7 @@ import { MainComponent } from './main/main.component';
 const routes: Routes = [
   { path: 'main', component: MainComponent },
   { path: 'details', component: DetailsComponent },
+  { path: 'details/:id', component: DetailsComponent },
 ]
 
 @NgModule({
