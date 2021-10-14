@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ShareIdService } from './../share-id.service';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { sampleData } from '../datasource';
 
@@ -19,7 +20,8 @@ export class DetailsComponent implements OnInit {
     {headerName: 'Certificate Name', field: 'cName', sortable: true, filter: true, width: 220 },
     {headerName: 'Certificate Date', field: 'cDate', sortable: true, filter: true, width: 220 },
   ];
-  constructor(private activatedRoute: ActivatedRoute){}
+  constructor(private activatedRoute: ActivatedRoute, private idService: ShareIdService){
+  }
   ngOnInit(): void {
     // this part is to get id from url
     this.activatedRoute.params.subscribe(p => {

@@ -23,8 +23,8 @@ export class GeneralNavComponent {
   openDialog(): void {
     const dialogRef = this.dialog.open(MyPopupComponent, {});
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log('The dialog was closed');
+    // });
   }
 }

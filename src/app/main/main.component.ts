@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { sampleData } from '../datasource';
+import { ShareIdService } from '../share-id.service';
 
 @Component({
   selector: 'app-main',
@@ -9,8 +10,9 @@ import { sampleData } from '../datasource';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private service: ShareIdService) { }
   rowData?: Object[];
+  data?: number;
   selectedData?: {
     id: number;
     name: string;
@@ -27,6 +29,9 @@ export class MainComponent implements OnInit {
 
   onCellClicked(event: any): void {  
     this.selectedData = event.data;
-    this.router.navigateByUrl('/details/' + this.selectedData?.id);
+    this.service.myMethod(this.selectedData?.id);
+    this.router.navigateByUrl('/details/' + this.selectedData?.id), {
+      queryParam: { 'id': this.selectedData?.id }
+    };
   }
 }
